@@ -1,3 +1,44 @@
-<footer>
-    Footer
+{% load static %}
+<footer class="text-white font-[Karla] font-[800] mt-10">
+    <div class="flex border-t-2 border-stone-300 justify-between sm:py-8 py-3 tracking-tight text-xs p-3">
+        <div class="flex">
+            <div class="my-auto mr-5 hidden sm:flex">
+                <img class="max-h-12" src="{% static 'logo.png' %}" alt="">
+            </div>
+            <div class="uppercase ">
+                <div class="hidden sm:block">
+                    <p>&copy; Michael Camerlynck</p>
+                    <p>Reproduction without explicit permission is prohibited</p>
+                </div>
+                <p><span class="inline-block sm:hidden">&copy;</span> {% now "Y" %}</p>
+            </div>
+        </div>
+        <div class="text-right uppercase">
+            <div class="sm:block hidden">
+                <p>Created</p>
+                <p>By Michael</p>
+                <p>Camerlynck</p>
+            </div>
+            <p class="sm:hidden inline-block">Michael Camerlynck</p>
+        </div>
+    </div>
+    <div class="sm:text-lg md:text-2xl text-sm border-y-2 border-stone-300 sm:flex justify-between py-4 p-3">
+        <div>
+            <ul class="hidden sm:flex tracking-widest">
+                <li class="mr-6 text-xs tracking-[-0.1em] self-center">&#8212;&#8212;&#8212;&#8212;&#8212;</li>
+                <li class="mr-6">CONTACT</li>
+                <li class="mr-6">ABOUT</li>
+                <li class="mr-6">LEGAL</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="flex sm:space-x-10 justify-between">
+                <li><i class="fa-brands fa-twitter"></i></li>
+                <li><i class="fa-brands fa-linkedin"></i></li>
+                <li><i class="fa-brands fa-discord"></i></li>
+                <li><i class="fa-brands fa-github"></i></li>
+                <li><i class="fa-brands fa-instagram"></i></li>
+            </ul>
+        </div>
+    </div>
 </footer>

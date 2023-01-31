@@ -16,6 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+STATIC_DIR = os.path.join(BASE_DIR, "static/")
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,12 +27,8 @@ SECRET_KEY = "django-insecure-=vw03*v+m1!3kk4@d!r_=mnqsp=ps4-)2p_)m5^g3ct65bo8vf
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
-
 
 # Tailwind Configuration
 NPM_BIN_PATH = "C:\Program Files\\nodejs\\npm.cmd"
@@ -131,7 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'img')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
