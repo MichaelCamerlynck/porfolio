@@ -8,20 +8,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% tailwind_css %}
-    <title>{{ title }}</title>
+    <title>{{ title }}  | Michael Camerlynck</title>
     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
         type="text/css" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'logo.ico' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'img/styling.css' %}"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap');
+
+        #signature {
+            stroke-dasharray: 350;
+            stroke-dashoffset: 350;
+            animation: sign 8s ease;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes sign {
+            40% {
+                stroke-dashoffset: 1;
+            }
+
+            81% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+                stroke-dashoffset: 0;
+            }
+        }
     </style>
 </head>
 
-<body class="container mx-auto px-1 bg-[#1C1C1E]">
-    {% include "./navbar.html" %}
-
-    {% block body_block %}
-    {% endblock %}
-
+<body class="sm:px-20 bg-[#1C1C1E]">
+    <div class="flex flex-row">
+        <div class="hidden lg:block basis-1/12">
+            {% include "./navbar.html" %}
+        </div>
+        <div class="basis-full sm:basis-11/12">
+            {% block body_block %}
+            {% endblock %}
+        </div>
+    </div>
     {% include "./footer.html" %}
 </body>
 
