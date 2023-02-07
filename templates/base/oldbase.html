@@ -8,14 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% tailwind_css %}
-    <title>{{ title }} | Michael Camerlynck</title>
+    <title>{{ title }}  | Michael Camerlynck</title>
     <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
         type="text/css" />
     <link rel="shortcut icon" type="image/png" href="{% static 'logo.ico' %}" />
     <!-- <link rel="stylesheet" href="{% static 'img/styling.css' %}"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
         #signature {
             stroke-dasharray: 350;
@@ -39,47 +38,20 @@
                 stroke-dashoffset: 0;
             }
         }
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            padding: 2px;
-            background: #696868;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            background: #d0d0d0;
-        }
     </style>
 </head>
 
-<body class="bg-[#1C1C1E]">
-    <div class="sm:flex sm:flex-row">
-        <div class="hidden lg:block basis-[7%]">
-            <nav class="sticky text-center top-28">
-                {% include "./navbar.html" %}
-            </nav>
+<body class="sm:px-20 bg-[#1C1C1E]">
+    <div class="flex flex-row">
+        <div class="hidden lg:block basis-1/12">
+            {% include "./navbar.html" %}
         </div>
-        <div class="sm:hidden sticky top-0">
-            <nav>
-                {% include "./navmobile.html" %}
-            </nav>
-        </div>
-        <div class="basis-full sm:basis-[93%] static text-white">
+        <div class="basis-full sm:basis-11/12 static">
             {% block body_block %}
             {% endblock %}
         </div>
     </div>
-
-    <div class="sm:px-20">
-        {% include "./footer.html" %}
-    </div>
+    {% include "./footer.html" %}
 </body>
 
 </html>
