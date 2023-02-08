@@ -1,15 +1,15 @@
 {% extends "base/base.html" %}
 {% load static %}
 {% block body_block %}
-<header class="sm:min-h-screen flex flex-col justify-center snap-y snap-center snap-mandatory mt-32">
+<header class="sm:min-h-screen flex flex-col justify-center snap-y snap-center snap-mandatory">
 
-    <div class="bg-[#FF8C00] sm:ml-32">
+    <div class="bg-[#FF8C00] sm:ml-32 py-4 sm:py-0">
         <div
-            class="sm:text-4xl font-bold tracking-wide sm:pt-0 pt-3 sm:ml-10 sm:mt-7 font-[Oswald] text-[rgba(0,0,0,0.4)]">
+            class="sm:text-4xl text-xl ml-3 font-bold tracking-wide sm:pt-0 pt-3 sm:ml-10 sm:mt-7 font-[Oswald] text-[rgba(0,0,0,0.4)] sm:text-left text-center">
             STUDENT &#183; DEVELOPER &#183; DESIGNER
         </div>
         <div
-            class="text-[rgba(255,255,255,0.5)] text-right pb-10 pt-4 sm:pt-64 sm:pb-28 sm:text-[11rem] text-5xl font-bold sm:flex sm:flex-col justify-end sm:tracking-[-0.62rem] sm:leading-[0.8]">
+            class="font-[Oswald] text-[rgba(255,255,255,0.5)] sm:text-right text-center pb-10 pt-8 sm:pt-64 sm:pb-28 sm:text-[11rem] text-[4rem] font-bold sm:flex sm:flex-col justify-end sm:tracking-[-0.62rem] sm:leading-[0.85] leading-[0.9]">
             <div>MICHAEL</div>
             <div>CAMERLYNCK</div>
         </div>
@@ -25,28 +25,33 @@
         <img class="max-w-[16rem]" src="{% static 'CVFoto.jpg' %}" alt="">
     </figure>
     
-    <div class="sm:mx-64 relative">
+    <div class="sm:mx-80 relative">
         <!-- Screen -->
-        <div class="hidden sm:block absolute sm:right-20 sm:-top-5 bg-[#1C1C1E] sm:px-4 px-2">
-            <h2 class="sm:text-4xl text-xl font-bold text-[#FF8C00]">ABOUT ME</h2>
+        <div class="hidden lg:block absolute sm:right-20 sm:-top-6 bg-[#1C1C1E] sm:px-4 px-2">
+            <h2 class="sm:text-5xl text-xl font-bold text-[#FF8C00] font-[Oswald]">ABOUT ME</h2>
         </div>
         <!-- Mobile -->
-        <div class="sm:hidden absolute left-8 -top-1 bg-[#1C1C1E] sm:px-4 px-2">
-            <h2 class="text-3xl font-bold text-[#FF8C00]">ABOUT ME</h2>
+        <div class="lg:hidden absolute left-8 -top-1 bg-[#1C1C1E] sm:px-4 px-2">
+            <h2 class="text-4xl font-bold text-[#FF8C00] font-[Oswald]">ABOUT ME</h2>
         </div>
         <div class="flex flex-row sm:m-0 m-4 border px-4 sm:pl-14 py-10">
-            <div class="sm:basis-5/12 hidden sm:block relative">
-                <img class="max-h-[25rem] -top-32 absolute" src="{% static 'CVFoto.jpg' %}" alt="">
+            <div class="sm:basis-4/12 hidden lg:block relative">
+                <img class="max-h-[32rem] -top-44 absolute" src="{% static 'PP.jpg' %}" alt="">
             </div>
-            <div class="sm:basis-7/12 basis-full">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem in tempore sed sint provident mollitia
-                aliquid
-                dolores a excepturi consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempore
-                dicta,
-                cupiditate, voluptatum aliquam officia sit dolorum labore nisi numquam consectetur impedit consequatur vel,
-                ut
-                veniam. Et saepe ea sapiente deleniti consequatur! Neque voluptates corporis sequi ut iure, corrupti sed!
+            <div class="sm:basis-8/12 basis-full">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem in tempore sed sint provident mollitia
+                    aliquid
+                    dolores a excepturi consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempore
+                    dicta,
+                    cupiditate, voluptatum aliquam officia sit dolorum labore nisi numquam consectetur impedit consequatur vel,
+                    ut
+                    veniam. Et saepe ea sapiente deleniti consequatur! Neque voluptates corporis sequi ut iure, corrupti sed!</p>
+                <p class="mt-5 font-bold font-[Oswald] text-xl text-[#FF8C00]">
+                    READ MORE 
+                    <i class="fa-solid fa-chevron-right"></i>
+                </p>
             </div>
+            
         </div>
     </div>
 </div>
