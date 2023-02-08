@@ -8,16 +8,16 @@
         </li>
         <ul class="text-xl font-extrabold tracking-tighter">
             <li style="writing-mode: vertical-rl;" class="rotate-180 mx-auto my-14">
-                <a href="">Home</a>
+                <a href="{% url 'main:index' %}">Home</a>
             </li>
             <li style="writing-mode: vertical-rl;" class="rotate-180 mx-auto my-14">
-                <a href="">About</a>
+                <a href="{% url 'main:aboutme' %}">About</a>
             </li>
             <li style="writing-mode: vertical-rl;" class="rotate-180 mx-auto my-14">
-                <a href="">Projects</a>
+                <a href="{% url 'main:projects' %}">Projects</a>
             </li>
             <li style="writing-mode: vertical-rl;" class="rotate-180 mx-auto my-14">
-                <a href="">Contact</a>
+                <a href="{% url 'main:contactme' %}">Contact</a>
             </li>
         </ul>
     </ul>
