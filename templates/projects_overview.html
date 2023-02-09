@@ -5,8 +5,8 @@
 
 {% for project in projects %}
 
-<div class="font-[Inconsolata] flex flex-col lg:text-right lg:ml-32">
-    <div class="lg:mr-10 ml-5 lg:ml-0 py-6 border-white  border-b-[1px]">
+<div class="font-[Inconsolata] flex flex-col lg:text-right lg:ml-28">
+    <div class="lg:mr-10 mx-4 lg:mx-0 py-6 border-white  border-b-[1px]">
         <p class="lg:text-2xl text-xl pb-2">PROJECT / {{forloop.counter|default:0|stringformat:"02d"}}</p>
         <h2 class="lg:text-[7rem] font-[900] lg:leading-[0.8] tracking-tight text-5xl">{{project.name}}</h2>
         <ul class="lg:flex lg:justify-end lg:mt-3 lg:text-[1.4rem]">
@@ -17,18 +17,15 @@
             </li>
             {% endfor %}
         </ul>
-        <ul class="flex lg:justify-end lg:my-8 mt-3">
+        <div class="flex lg:justify-end lg:my-8 mt-3 overflow-x-auto hidden-scrollbar">
             {% for img in project.img_set.all %}
             {% with 'imgs/'|add:img.url|add:'' as image_static %}
-            <li class="lg:ml-10 mr-3 lg:mr-0">
-                <img class="lg:max-h-56 max-h-32 overflow-hidden" src="{% static image_static %}" alt="">
-            </li>
+                <img class="lg:max-h-56 max-h-20 shrink-0 mr-3 lg:mr-0 lg:ml-5 last:mr-0" src="{% static image_static %}" alt="">
             {% endwith %}
             {% endfor %}
-        </ul>
+        </div>
     </div>
 </div>
-
 
 {% endfor %}
 
