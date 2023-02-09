@@ -2,31 +2,46 @@
 {% load static %}
 {% block body_block %}
 
-
-{% for project in projects %}
-
-<div class="font-[Inconsolata] flex flex-col lg:text-right lg:ml-28">
-    <div class="lg:mr-10 mx-4 lg:mx-0 py-6 border-white  border-b-[1px]">
+<ul class="font-[Inconsolata] last:border-none lg:text-right">
+    {% for project in projects %}
+    <li class="flex flex-col py-6 lg:ml-28 mx-4 lg:mr-10 last:border-none border-white border-b-[1px]">
         <p class="lg:text-2xl text-xl pb-2">PROJECT / {{forloop.counter|default:0|stringformat:"02d"}}</p>
         <h2 class="lg:text-[7rem] font-[900] lg:leading-[0.8] tracking-tight text-5xl">{{project.name}}</h2>
-        <ul class="lg:flex lg:justify-end lg:mt-3 lg:text-[1.4rem]">
-            <li>{{project.date}}</li>
-            {% for tech in project.tech_set.all %}
-            <li class="lg:ml-3">
-                <p><span class="hidden lg:inline-block lg:mr-3">/</span>{{tech.name}}</p>
-            </li>
-            {% endfor %}
+        <!-- <ul class="lg:flex lg:justify-end lg:mt-3 lg:text-[1.4rem]">
+                <li>{{project.date}}</li>
+                <li>{{project.scope}}</li>
+                {% for tech in project.tech_set.all %}
+                <li class="lg:ml-3">
+                    <p><span class="hidden lg:inline-block lg:mr-3">/</span>{{tech.name}}</p>
+                </li>
+                {% endfor %}
+            </ul> -->
+        <ul class="lg:flex lg:justify-end mt-4">
+            <ul class="lg:flex">
+                <li class="lg:mr-3">{{project.date}}<span class="hidden lg:inline-block lg:ml-3">/</span></li>
+                <li class="lg:mr-3">{{project.scope}}<span class="hidden lg:inline-block lg:ml-3">/</span></li>
+            </ul>
+            <ul class="flex flex-wrap">
+                {% for tech in project.tech_set.all %}
+                <li class="mr-3">
+                    {% if forloop.counter != 1 %}
+                    <span class="mr-3">/</span>
+                    {% endif %}
+                    {{tech.name}}
+                </li>
+                {% endfor %}
+            </ul>
         </ul>
         <div class="flex lg:justify-end lg:my-8 mt-3 overflow-x-auto hidden-scrollbar">
             {% for img in project.img_set.all %}
             {% with 'imgs/'|add:img.url|add:'' as image_static %}
-                <img class="lg:max-h-56 max-h-20 shrink-0 mr-3 lg:mr-0 lg:ml-5 last:mr-0" src="{% static image_static %}" alt="">
+            <img class="lg:max-h-56 max-h-32 shrink-0 mr-3 lg:mr-0 lg:ml-5 last:mr-0" src="{% static image_static %}"
+                alt="{{img.alt}}">
             {% endwith %}
             {% endfor %}
         </div>
-    </div>
-</div>
-
-{% endfor %}
+    </li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
