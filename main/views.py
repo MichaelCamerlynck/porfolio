@@ -20,6 +20,7 @@ class ProjectListView(ListView):
 
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
+       context["title"] = "Projects"
        return context
    
 
@@ -28,6 +29,7 @@ class AboutMeView(TemplateView):
 
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
+       context["title"] = "About Me"
        return context
    
 
@@ -36,4 +38,5 @@ class ContactView(TemplateView):
 
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
+       context["title"] = "Contact"
        return context
