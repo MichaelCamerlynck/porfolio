@@ -24,7 +24,7 @@
     <figure class="mx-auto mb-10 sm:hidden">
         <img class="max-w-[16rem]" src="{% static 'CVFoto.jpg' %}" alt="">
     </figure>
-    
+
     <div class="sm:mx-80 relative">
         <!-- Screen -->
         <div class="hidden lg:block absolute sm:right-20 sm:-top-6 bg-[#1C1C1E] sm:px-4 px-2">
@@ -39,19 +39,67 @@
                 <img class="max-h-[32rem] -top-44 absolute" src="{% static 'PP.jpg' %}" alt="">
             </div>
             <div class="sm:basis-8/12 basis-full">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem in tempore sed sint provident mollitia
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem in tempore sed sint provident
+                    mollitia
                     aliquid
-                    dolores a excepturi consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam tempore
+                    dolores a excepturi consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                    tempore
                     dicta,
-                    cupiditate, voluptatum aliquam officia sit dolorum labore nisi numquam consectetur impedit consequatur vel,
+                    cupiditate, voluptatum aliquam officia sit dolorum labore nisi numquam consectetur impedit
+                    consequatur vel,
                     ut
-                    veniam. Et saepe ea sapiente deleniti consequatur! Neque voluptates corporis sequi ut iure, corrupti sed!</p>
-                <p class="mt-5 font-bold font-[Oswald] text-xl text-[#FF8C00]">
-                    READ MORE 
-                    <i class="fa-solid fa-chevron-right"></i>
-                </p>
+                    veniam. Et saepe ea sapiente deleniti consequatur! Neque voluptates corporis sequi ut iure, corrupti
+                    sed!</p>
+                <a href="{% url 'main:aboutme' %}">
+                    <p class="mt-5 font-bold font-[Oswald] text-xl text-[#FF8C00]">
+                        READ MORE
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </p>
+                </a>
             </div>
-            
+
+        </div>
+    </div>
+</div>
+
+<div class="min-h-screen flex flex-col justify-center snap-y snap-center snap-mandatory">
+    <figure class="mx-auto mb-10 sm:hidden">
+        <img class="max-w-[16rem]" src="{% static 'imgs/Artificial_Img_1.png' %}" alt="">
+    </figure>
+
+    <div class="sm:mx-80 relative">
+        <!-- Screen -->
+        <div class="hidden lg:block absolute sm:left-20 sm:-top-6 bg-[#1C1C1E] sm:px-4 px-2">
+            <h2 class="sm:text-5xl text-xl font-bold text-[#FF8C00] font-[Oswald]">MY PROJECTS</h2>
+        </div>
+        <!-- Mobile -->
+        <div class="lg:hidden absolute left-8 -top-1 bg-[#1C1C1E] sm:px-4 px-2">
+            <h2 class="text-4xl font-bold text-[#FF8C00] font-[Oswald]">MY PROJECTS</h2>
+        </div>
+        <div class="flex flex-row sm:m-0 m-4 border px-4 sm:pl-14 py-10">
+            <div class="sm:basis-8/12 basis-full pr-8">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem in tempore sed sint provident
+                    mollitia
+                    aliquid
+                    dolores a excepturi consectetur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                    tempore
+                    dicta,
+                    cupiditate, voluptatum aliquam officia sit dolorum labore nisi numquam consectetur impedit
+                    consequatur vel,
+                    ut
+                    veniam. Et saepe ea sapiente deleniti consequatur! Neque voluptates corporis sequi ut iure, corrupti
+                    sed!</p>
+                <a href="{% url 'main:projects' %}">
+                    <p class="mt-5 font-bold font-[Oswald] text-xl text-[#FF8C00]">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        SEE ALL
+                    </p>
+                </a>
+            </div>
+            <div class="sm:basis-4/12 hidden lg:block relative">
+                <img class="max-h-[32rem] -top-44 absolute" src="{% static 'imgs/Artificial_Img_1.png' %}" alt="">
+            </div>
+
         </div>
     </div>
 </div>
