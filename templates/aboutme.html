@@ -2,7 +2,21 @@
 {% load static %}
 {% block body_block %}
 
-<h1>ABOUT ME</h1>
-
+<div class="min-h-screen">
+    <div class="flex flex-row px-32 mt-20">
+        <div class="basis-1/3 text-right relative">
+            <!-- MAKE IMAGE LARGER, FIGURE OUT POSITIONING, MAKE MOBILE FRIENDLY< -->
+            <img class="" src="{% static 'CVFoto.jpg' %}" alt="">
+            <div class="absolute bottom-0 right-0">
+                <p>ABOUT</p>
+                <h2 class="text-black my-auto">MICHAEL</h2>
+            </div>
+            
+        </div>
+        <div class="basis-2/3 bg-[#FF8C00] relative">
+            <h2 class="absolute bottom-0">CAMERLYNCK</h2>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
