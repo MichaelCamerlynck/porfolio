@@ -17,6 +17,7 @@ class ProjectListView(ListView):
    context_object_name = "projects"
    model = models.Project
    template_name = "projects_overview.html"
+   ordering = ['order']
 
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)

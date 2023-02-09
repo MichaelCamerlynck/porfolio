@@ -5,6 +5,7 @@ class Project(models.Model):
     name = models.CharField(max_length=256)
     date = models.PositiveBigIntegerField()
     scope = models.CharField(max_length=50)
+    order = models.PositiveIntegerField()
 
     def __str__(self):
         return self.name
