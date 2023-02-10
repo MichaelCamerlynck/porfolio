@@ -2,7 +2,46 @@
 {% load static %}
 {% block body_block %}
 
-<h1>CONTACT ME</h1>
+<div class="lg:px-32 px-5 lg:min-h-screen">
+    <h1 class="font-bold font-[Oswald] lg:text-[4rem] text-center">Want To Get in Touch?</h1>
+
+    <div class="lg:flex lg:flex-row">
+        <div class="basis-4/12">
+            michael@camerlynck.com
+        </div>
+        <div class="basis-4/12">
+            <p class="">OR</p>
+        </div>
+        <div class="basis-4/12 text-right lg:pl-28 mb-5">
+            <form action="">
+                <div class="flex flex-col">
+                    <label for="name" class="text-xl tracking-widest mb-1">NAME</label>
+                    <input type="text" id="name"
+                        class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+                </div>
+                <div class="flex flex-col mt-8">
+                    <label for="email" class="text-xl tracking-widest mb-1">E - MAIL</label>
+                    <input type="email" id="email" class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+                </div>
+
+                <div class="flex flex-col mt-8">
+                    <label for="subject" class="text-xl tracking-widest mb-1">SUBJECT</label>
+                    <input type="text" id="subject" class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+                </div>
+
+                <div class="flex flex-col mt-8">
+                    <label for="message" class="text-xl tracking-widest mb-1">MESSAGE</label>
+                    <textarea id="message" class="bg-[#1C1C1E] border-2 border-white focus:border-white"
+                        rows="5"></textarea>
+                </div>
+
+                <div class="mt-8 bg-white text-[#1C1C1E] text-center py-2 text-xl font-bold">
+                    <input type="submit" value="SEND" class="tracking-widest">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
