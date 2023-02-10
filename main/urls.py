@@ -8,4 +8,5 @@ urlpatterns = [
     path("projects", views.ProjectListView.as_view(), name='projects'),
     path("contactme", views.ContactView.as_view(), name='contactme'),
     path("aboutme", views.AboutMeView.as_view(), name='aboutme'),
+    path("send", views.send, name='send'),
 ]
