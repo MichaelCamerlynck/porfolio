@@ -3,18 +3,23 @@
 {% block body_block %}
 
 <div class="min-h-screen">
-    <div class="flex flex-row px-32 mt-20">
-        <div class="basis-1/3 text-right relative">
-            <!-- MAKE IMAGE LARGER, FIGURE OUT POSITIONING, MAKE MOBILE FRIENDLY< -->
+    <div class="flex flex-row lg:px-32 font-[Oswald] lg:mt-28">
+        <div class="lg:basis-auto basis-full relative">
             <img class="" src="{% static 'CVFoto.jpg' %}" alt="">
-            <div class="absolute bottom-0 right-0">
-                <p>ABOUT</p>
-                <h2 class="text-black my-auto">MICHAEL</h2>
+            <!-- Screen -->
+            <div class="absolute bottom-10 right-0 text-left hidden lg:block">
+                <p class="lg:text-5xl text-[rgba(0,0,0,0.5)] font-bold">Hi I'm</p>
+                <h2 class="text-[rgba(0,0,0,0.5)] my-auto font-bold xl:text-[9rem] text-5xl tracking-tighter leading-none">MICHAEL</h2>
             </div>
-            
+            <!-- Mobile -->
+            <div class="absolute bottom-0 text-center left-1/2 -translate-x-1/2 lg:translate-x-0 lg:hidden">
+                <p class="lg:text-5xl text-2xl text-[rgba(0,0,0,0.5)] font-bold">Hi I'm</p>
+                <h2 class="text-[rgba(0,0,0,0.5)] my-auto font-bold xl:text-[9rem] text-[4.5rem] tracking-tighter leading-none">MICHAEL</h2>
+                <h2 class="text-[rgba(0,0,0,0.5)] my-auto font-bold xl:text-[9rem] text-[4.5rem] tracking-tighter leading-none lg:hidden">CAMERLYNCK</h2>
+            </div>
         </div>
-        <div class="basis-2/3 bg-[#FF8C00] relative">
-            <h2 class="absolute bottom-0">CAMERLYNCK</h2>
+        <div class="lg:basis-2/3 hidden lg:block bg-[#FF8C00] relative">
+            <h2 class="absolute lg:bottom-10 font-bold xl:text-[9rem] tracking-tighter text-[rgba(0,0,0,0.5)] leading-none">CAMERLYNCK</h2>
         </div>
     </div>
 </div>
