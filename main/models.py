@@ -6,6 +6,8 @@ class Project(models.Model):
     date = models.PositiveBigIntegerField()
     scope = models.CharField(max_length=50)
     order = models.PositiveIntegerField()
+    main_img = models.CharField(max_length=100)
+    summary = models.TextField()
 
     def __str__(self):
         return self.name

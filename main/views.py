@@ -32,7 +32,9 @@ class ProjectDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)
-       context["title"] = "Project Name"
+       project = self.get_object()
+       context["title"] = project.name
+       context["altered_title"] = project.name
        return context
    
 
