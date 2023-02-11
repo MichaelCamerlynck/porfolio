@@ -2,55 +2,59 @@
 {% load static %}
 {% block body_block %}
 
-<div class="px-5 lg:px-0 lg:pr-32 lg:min-h-screen">
+<div class="px-5 lg:px-0 lg:pr-32 lg:pl-20 lg:mt-28 mb-12">
+    <div id="toast"></div>
 
-    <div id="toast">
-
-    </div>
-
-    <!-- <h1 class="font-bold font-[Oswald] lg:text-[4rem] text-center">Want To Get in Touch?</h1> -->
-
-    <div class="lg:flex lg:flex-row sm:mb-5 lg:mt-28">
-        <div class="basis-6/12 pl-32 font-bold">
-            <!-- <h2 class="lg:text-5xl mb-5">DIRECTLY:</h2>
-            <div class="text-4xl">
-                <p class="mb-5">michael@camerlynk.com</p>
-                <p class="mb-5">&</p>
-                <p class="">LINKEDIN <i class="fa-brands fa-linkedin"></i></p>
-            </div> -->
-        </div>
-
-        <div class="basis-2/12">
-            <!-- <p class="lg:text-[6rem]">OR</p> -->
+    <div class="lg:flex lg:flex-row lg:mb-16 mb-10">
+        <div class="basis-8/12">
+            <h1 class="lg:text-5xl text-4xl lg:mb-0 mb-4 font-bold font-[Oswald]">GET IN TOUCH</h1>
         </div>
         <div class="basis-4/12 text-right lg:mb-0 mb-5">
+            <div class="text-2xl text-left">
+                <p class="mb-2">
+                    <i class="fa-solid fa-envelope"></i>
+                    michael@camerlynck.com
+                </p>
+                <p>
+                    <i class="fa-brands fa-linkedin"></i>
+                    MichaelCamerlynck
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:flex lg:flex-row">
+        <div class="basis-8/12 lg:mb-0 mb-2">
+            For a faster response, you can contact me through the form.
+        </div>
+        <div class="basis-4/12">
             <form action="">
-                <div class="flex flex-col">
-                    <label for="name" class="text-xl tracking-widest mb-1">NAME</label>
-                    <input type="text" id="name" placeholder="Name" required
-                        class="bg-[#1C1C1E] border-2 border-white focus:border-white">
-                </div>
-                <div class="flex flex-col mt-8">
-                    <label for="email" class="text-xl tracking-widest mb-1">E - MAIL</label>
-                    <input type="email" id="email" placeholder="E - Mail" required
-                        class="bg-[#1C1C1E] border-2 border-white focus:border-white">
-                </div>
+            <div class="flex flex-col">
+                <label for="name" class="text-xl tracking-widest mb-1">NAME</label>
+                <input type="text" id="name" placeholder="Name" required
+                    class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+            </div>
+            <div class="flex flex-col mt-8">
+                <label for="email" class="text-xl tracking-widest mb-1">E - MAIL</label>
+                <input type="email" id="email" placeholder="E - Mail" required
+                    class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+            </div>
 
-                <div class="flex flex-col mt-8">
-                    <label for="subject" class="text-xl tracking-widest mb-1">SUBJECT</label>
-                    <input type="text" id="subject" placeholder="Subject" required
-                        class="bg-[#1C1C1E] border-2 border-white focus:border-white">
-                </div>
+            <div class="flex flex-col mt-8">
+                <label for="subject" class="text-xl tracking-widest mb-1">SUBJECT</label>
+                <input type="text" id="subject" placeholder="Subject" required
+                    class="bg-[#1C1C1E] border-2 border-white focus:border-white">
+            </div>
 
-                <div class="flex flex-col mt-8">
-                    <label for="message" class="text-xl tracking-widest mb-1">MESSAGE</label>
-                    <textarea id="message" placeholder="Message" required
-                        class="bg-[#1C1C1E] border-2 border-white focus:border-white" rows="5"></textarea>
-                </div>
+            <div class="flex flex-col mt-8">
+                <label for="message" class="text-xl tracking-widest mb-1">MESSAGE</label>
+                <textarea id="message" placeholder="Message" required
+                    class="bg-[#1C1C1E] border-2 border-white focus:border-white" rows="5"></textarea>
+            </div>
 
-                <div class="mt-8 bg-white text-[#1C1C1E] text-center py-2 text-xl font-bold">
-                    <input id="submit" type="submit" value="SEND" class="tracking-widest">
-                </div>
+            <div class="mt-8 bg-white text-[#1C1C1E] text-center py-2 text-xl font-bold">
+                <input id="submit" type="submit" value="SEND" class="tracking-widest">
+            </div>
             </form>
         </div>
     </div>
@@ -74,14 +78,14 @@
             success: function (response) {
                 $('form')[0].reset()
                 $("#toast").append(`
-                    <div class="flex items-center justify-between max-w-xs p-4 absolute top-5 right-10 bg-white border rounded-md shadow-sm toast">
+                    <div class="flex items-center justify-between max-w-md p-4 absolute top-5 right-10 bg-white border rounded-md shadow-sm toast font-[Inconsolata]">
                         <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-500 mr-4" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <p class="ml-3 text-sm font-bold text-green-600">Successfully Toast Message !</p>
+                            <p class="ml-3 text-sm font-bold text-green-600">Message sent! I will get to you shortly.</p>
                         </div>
                         <span class="inline-flex items-center cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-600 close" fill="none" viewBox="0 0 24 24"

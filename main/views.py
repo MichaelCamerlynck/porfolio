@@ -26,6 +26,15 @@ class ProjectListView(ListView):
        context["title"] = "Projects"
        return context
    
+class ProjectDetailView(DetailView):
+    model = models.Project
+    template_name = "project.html"
+
+    def get_context_data(self, **kwargs):
+       context = super().get_context_data(**kwargs)
+       context["title"] = "Project Name"
+       return context
+   
 
 class AboutMeView(TemplateView):
    template_name = "aboutme.html"
@@ -43,6 +52,7 @@ class ContactView(TemplateView):
        context = super().get_context_data(**kwargs)
        context["title"] = "Contact"
        return context
+   
    
 def send(request):
     name = request.GET["name"]

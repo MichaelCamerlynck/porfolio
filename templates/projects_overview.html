@@ -6,7 +6,9 @@
     {% for project in projects %}
     <li class="flex flex-col py-6 lg:ml-28 mx-4 lg:mr-10 last:border-none border-white border-b-[1px]">
         <p class="lg:text-2xl text-xl mb-4">PROJECT / {{forloop.counter|default:0|stringformat:"02d"}}</p>
-        <h2 class="lg:text-[7rem] font-[900] lg:leading-[0.8] text-5xl font-[Oswald]">{{project.name}}</h2>
+        <a href="{% url 'main:project' pk=project.id %}">
+            <h2 class="lg:text-[7rem] font-[900] lg:leading-[0.8] text-5xl font-[Oswald] tracking-tight">{{project.name}}</h2>
+        </a>
         <ul class="lg:flex lg:justify-end lg:mt-8 mt-3 lg:text-[1.3rem] text-[1.05rem]">
             <ul class="lg:flex">
                 <li class="lg:mr-3">{{project.date}}<span class="hidden lg:inline-block lg:ml-3">|</span></li>
