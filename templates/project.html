@@ -4,15 +4,15 @@
 
 <div class="lg:min-h-screen">
     <div class="lg:flex lg:flex-row lg:px-32 lg:mt-36 px-5">
-        <div class="">
-            <div class="basis-2/6 my-auto relative">
-                <img src="{% static project.main_img %}" alt="" class="lg:max-h-[40rem] min-w-full mx-auto border">
+        <div class="basis-2/6">
+            <div class="my-auto relative">
+                <img src="{% static project.main_img %}" alt="" class="lg:max-h-[40rem] mx-auto border">
                 <h1
                     class="font-[Oswald] font-bold lg:text-[6rem] text-[3.5rem] tracking-tight absolute bottom-0 pl-3 lg:hidden text-[rgba(225,225,225,0.9)]">
                     {{altered_title}}</h1>
             </div>
         </div>
-        <div class="basis-4/6 flex flex-col my-auto lg:px-20">
+        <div class="basis-4/6 flex flex-col my-auto lg:pl-14">
             <h1 class="font-[Oswald] font-bold lg:text-[6rem] text-[3.5rem] tracking-tight hidden lg:block">
                 {{altered_title}}</h1>
 
@@ -66,6 +66,17 @@
                 deserunt voluptates id hic voluptate ipsum! Quibusdam rem non adipisci, deleniti quae voluptas nobis,
                 placeat aperiam est beatae modi soluta accusamus nostrum aspernatur natus.
             </p>
+        </div>
+    </div>
+
+    <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
+        <div class="relative">
+            <img src="{% static 'imgs/Artificial_Img_2.png' %}" alt="" class="lg:max-h-[20rem]">
+            <p class="absolute bottom-0 text-sm pl-4 pb-2">Figure 1. An Image of an ocean</p>
+        </div>
+        <div class="relative">
+            <img src="{% static 'imgs/Artificial_Img_3.png' %}" alt="" class="lg:max-h-[20rem]">
+            <p class="absolute bottom-0 text-sm pl-4 pb-2">Figure 1. An Image of an ocean</p>
         </div>
     </div>
 
