@@ -6,7 +6,6 @@
     <div class="lg:flex lg:flex-row lg:px-32 lg:mt-36 px-5">
         <div class="basis-2/6">
             <div class="my-auto relative">
-                <!-- <img src="{% static project.main_img %}" alt="" class="lg:max-h-[40rem] mx-auto border"> -->
                 <img src="{% static main_img.url %}" alt="" class="lg:max-h-[40rem] mx-auto border">
                 <h1
                     class="font-[Oswald] font-bold lg:text-[6rem] text-[3.5rem] tracking-tight absolute bottom-0 pl-3 lg:hidden text-[rgba(225,225,225,0.9)]">
@@ -34,7 +33,7 @@
 
             <div>
                 {% for para in summary %}
-                <p class="text-xl">{{para}}</p>
+                <p class="text-lg mb-3">{{para}}</p>
                 {% endfor %}
             </div>
 
@@ -63,7 +62,7 @@
     <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
         {% for img in techical_img %}
         <div class="lg:mb-0 mb-3">
-            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[25rem]">
             <p class="text-sm mt-1">{{img.alt}}</p>
         </div>
         {% endfor %}
@@ -100,7 +99,7 @@
     <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
         {% for img in roles_img %}
         <div class="lg:mb-0 mb-3">
-            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[25rem]">
             <p class="text-sm mt-1">{{img.alt}}</p>
         </div>
         {% endfor %}
@@ -125,7 +124,7 @@
     <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
         {% for img in challenges_img %}
         <div class="lg:mb-0 mb-3">
-            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[25rem]">
             <p class="text-sm mt-1">{{img.alt}}</p>
         </div>
         {% endfor %}
@@ -150,7 +149,7 @@
     <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
         {% for img in results_img %}
         <div class="lg:mb-0 mb-3">
-            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[25rem]">
             <p class="text-sm mt-1">{{img.alt}}</p>
         </div>
         {% endfor %}
