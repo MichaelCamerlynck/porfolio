@@ -27,10 +27,8 @@
         </ul>
         <div class="flex lg:justify-end lg:my-8 mt-3 overflow-x-auto hidden-scrollbar">
             {% for img in project.img_set.all %}
-            {% with 'imgs/'|add:img.url|add:'' as image_static %}
-            <img class="lg:max-h-56 max-h-36 shrink-0 mr-3 lg:mr-0 lg:ml-5 last:mr-0" src="{% static image_static %}"
+            <img class="lg:max-h-56 max-h-36 shrink-0 mr-3 lg:mr-0 lg:ml-5 last:mr-0" src="{% static img.url %}"
                 alt="{{img.alt}}">
-            {% endwith %}
             {% endfor %}
         </div>
     </li>

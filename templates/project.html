@@ -6,15 +6,17 @@
     <div class="lg:flex lg:flex-row lg:px-32 lg:mt-36 px-5">
         <div class="basis-2/6">
             <div class="my-auto relative">
-                <img src="{% static project.main_img %}" alt="" class="lg:max-h-[40rem] mx-auto border">
+                <!-- <img src="{% static project.main_img %}" alt="" class="lg:max-h-[40rem] mx-auto border"> -->
+                <img src="{% static main_img.url %}" alt="" class="lg:max-h-[40rem] mx-auto border">
                 <h1
                     class="font-[Oswald] font-bold lg:text-[6rem] text-[3.5rem] tracking-tight absolute bottom-0 pl-3 lg:hidden text-[rgba(225,225,225,0.9)]">
-                    {{altered_title}}</h1>
+                    {{project.name}}
+                </h1>
             </div>
         </div>
         <div class="basis-4/6 flex flex-col my-auto lg:pl-14">
             <h1 class="font-[Oswald] font-bold lg:text-[6rem] text-[3.5rem] tracking-tight hidden lg:block">
-                {{altered_title}}</h1>
+                {{project.name}}</h1>
 
             <div class="mb-7 mt-3 text-[1.2rem]">
                 <ul class="lg:flex lg:border-y">
@@ -30,153 +32,128 @@
                 </ul>
             </div>
 
-            <p class="text-xl">{{project.summary}}</p>
+            <div>
+                {% for para in summary %}
+                <p class="text-xl">{{para}}</p>
+                {% endfor %}
+            </div>
+
         </div>
     </div>
 </div>
 
 <div>
+    {% if techical.0 != '-' %}
     <div class="lg:px-44 px-5 lg:mt-0 mt-12">
         <div class="border-t relative lg:mx-20">
             <h2 class="font-bold font-[Oswald] lg:text-[2.6rem] text-2xl absolute lg:-top-5 -top-4 bg-[#1C1C1E] pr-4 tracking-widest">
                 TECHNICAL DETAIL</h2>
-            <p class="lg:py-10 py-6 text-justify text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem illum vero quod quibusdam
-                consequuntur
-                id. Odit consequuntur quo optio voluptatum sequi saepe commodi eaque nemo aperiam necessitatibus ad a
-                quasi
-                ut explicabo unde quis vero, sed incidunt et. Consequuntur expedita, fugit voluptate enim dolores
-                minima,
-                iste ipsum reprehenderit deleniti placeat eos recusandae id alias laudantium itaque? Asperiores velit
-                dignissimos ratione, qui, nam eius, illum tempora suscipit perferendis aspernatur quaerat nostrum
-                reiciendis
-                voluptate? Optio enim reiciendis nihil deserunt assumenda quisquam laboriosam molestias doloribus
-                provident,
-                fugiat sequi earum excepturi, distinctio debitis accusantium voluptatem temporibus voluptatum alias
-                adipisci. Voluptatum nihil doloribus sed quaerat, eligendi perferendis laborum corporis, quasi fuga,
-                excepturi nulla porro sequi dicta reprehenderit quis est similique amet veniam totam quidem soluta
-                mollitia
-                dolores. Illo, tenetur? Animi ipsa eligendi nesciunt dolorem quidem assumenda iusto iste totam voluptas
-                officiis vel expedita voluptatibus temporibus delectus, ea rem incidunt recusandae similique vero
-                suscipit.
-                Distinctio soluta sit numquam error? Inventore aspernatur aliquam laboriosam quia, atque doloribus quae
-                ab a
-                libero officiis perspiciatis nesciunt sunt tempora facilis, esse dicta exercitationem explicabo
-                accusamus
-                deserunt voluptates id hic voluptate ipsum! Quibusdam rem non adipisci, deleniti quae voluptas nobis,
-                placeat aperiam est beatae modi soluta accusamus nostrum aspernatur natus.
-            </p>
+            
+            <div class="lg:py-10 py-6 text-justify text-lg">
+                {% for para in techical %}
+                <p class="mb-3">
+                    {{para}}
+                </p>
+                {% endfor %}
+            </div>
         </div>
     </div>
+    {% endif %}
 
     <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
-        <div class="relative">
-            <img src="{% static 'imgs/Artificial_Img_2.png' %}" alt="" class="lg:max-h-[20rem]">
-            <p class="absolute bottom-0 text-sm pl-4 pb-2">Figure 1. An Image of an ocean</p>
+        {% for img in techical_img %}
+        <div class="lg:mb-0 mb-3">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <p class="text-sm mt-1">{{img.alt}}</p>
         </div>
-        <div class="relative">
-            <img src="{% static 'imgs/Artificial_Img_3.png' %}" alt="" class="lg:max-h-[20rem]">
-            <p class="absolute bottom-0 text-sm pl-4 pb-2">Figure 1. An Image of an ocean</p>
-        </div>
+        {% endfor %}
     </div>
 
+    {% if roles.0 != '-' %}
     <div class="lg:px-44 px-5 lg:mt-0 mt-12">
         <div class="border-t relative lg:mx-20">
             <h2 class="font-bold font-[Oswald] lg:text-[2.6rem] text-2xl absolute lg:-top-5 -top-4 bg-[#1C1C1E] pr-4 lg:pr-0 lg:pl-4 tracking-widest lg:right-0">
                 ROLES & CONTRIBUTION</h2>
-            <p class="lg:py-10 py-6 text-justify text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem illum vero quod quibusdam
-                consequuntur
-                id. Odit consequuntur quo optio voluptatum sequi saepe commodi eaque nemo aperiam necessitatibus ad a
-                quasi
-                ut explicabo unde quis vero, sed incidunt et. Consequuntur expedita, fugit voluptate enim dolores
-                minima,
-                iste ipsum reprehenderit deleniti placeat eos recusandae id alias laudantium itaque? Asperiores velit
-                dignissimos ratione, qui, nam eius, illum tempora suscipit perferendis aspernatur quaerat nostrum
-                reiciendis
-                voluptate? Optio enim reiciendis nihil deserunt assumenda quisquam laboriosam molestias doloribus
-                provident,
-                fugiat sequi earum excepturi, distinctio debitis accusantium voluptatem temporibus voluptatum alias
-                adipisci. Voluptatum nihil doloribus sed quaerat, eligendi perferendis laborum corporis, quasi fuga,
-                excepturi nulla porro sequi dicta reprehenderit quis est similique amet veniam totam quidem soluta
-                mollitia
-                dolores. Illo, tenetur? Animi ipsa eligendi nesciunt dolorem quidem assumenda iusto iste totam voluptas
-                officiis vel expedita voluptatibus temporibus delectus, ea rem incidunt recusandae similique vero
-                suscipit.
-                Distinctio soluta sit numquam error? Inventore aspernatur aliquam laboriosam quia, atque doloribus quae
-                ab a
-                libero officiis perspiciatis nesciunt sunt tempora facilis, esse dicta exercitationem explicabo
-                accusamus
-                deserunt voluptates id hic voluptate ipsum! Quibusdam rem non adipisci, deleniti quae voluptas nobis,
-                placeat aperiam est beatae modi soluta accusamus nostrum aspernatur natus.
-            </p>
+                <div class="lg:py-10 py-6 text-justify text-lg">
+                    <p class="mb-3">
+                        {{roles.0}}
+                    </p>
+
+                    <ul class="mb-3 list-disc list-inside">
+                        {% for list in roles_list %}
+                            <li>{{list}}</li>
+                        {% endfor %}
+                    </ul>
+
+                    {% for para in roles %}
+                    {% if not forloop.first %} 
+                    <p class="mb-3">
+                        {{para}}
+                    </p>
+                    {% endif %}
+                    {% endfor %}
+                </div>
         </div>
     </div>
+    {% endif %}
 
+    <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
+        {% for img in roles_img %}
+        <div class="lg:mb-0 mb-3">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <p class="text-sm mt-1">{{img.alt}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if challenges.0 != '-' %}
     <div class="lg:px-44 px-5 lg:mt-0 mt-12">
         <div class="border-t relative lg:mx-20">
             <h2 class="font-bold font-[Oswald] lg:text-[2.6rem] text-2xl absolute lg:-top-5 -top-4 bg-[#1C1C1E] pr-4 tracking-widest">
                 CHALLENGES & SOLUTION</h2>
-            <p class="lg:py-10 py-6 text-justify text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem illum vero quod quibusdam
-                consequuntur
-                id. Odit consequuntur quo optio voluptatum sequi saepe commodi eaque nemo aperiam necessitatibus ad a
-                quasi
-                ut explicabo unde quis vero, sed incidunt et. Consequuntur expedita, fugit voluptate enim dolores
-                minima,
-                iste ipsum reprehenderit deleniti placeat eos recusandae id alias laudantium itaque? Asperiores velit
-                dignissimos ratione, qui, nam eius, illum tempora suscipit perferendis aspernatur quaerat nostrum
-                reiciendis
-                voluptate? Optio enim reiciendis nihil deserunt assumenda quisquam laboriosam molestias doloribus
-                provident,
-                fugiat sequi earum excepturi, distinctio debitis accusantium voluptatem temporibus voluptatum alias
-                adipisci. Voluptatum nihil doloribus sed quaerat, eligendi perferendis laborum corporis, quasi fuga,
-                excepturi nulla porro sequi dicta reprehenderit quis est similique amet veniam totam quidem soluta
-                mollitia
-                dolores. Illo, tenetur? Animi ipsa eligendi nesciunt dolorem quidem assumenda iusto iste totam voluptas
-                officiis vel expedita voluptatibus temporibus delectus, ea rem incidunt recusandae similique vero
-                suscipit.
-                Distinctio soluta sit numquam error? Inventore aspernatur aliquam laboriosam quia, atque doloribus quae
-                ab a
-                libero officiis perspiciatis nesciunt sunt tempora facilis, esse dicta exercitationem explicabo
-                accusamus
-                deserunt voluptates id hic voluptate ipsum! Quibusdam rem non adipisci, deleniti quae voluptas nobis,
-                placeat aperiam est beatae modi soluta accusamus nostrum aspernatur natus.
-            </p>
+                <div class="lg:py-10 py-6 text-justify text-lg">
+                    {% for para in challenges %}
+                    <p class="mb-3">
+                        {{para}}
+                    </p>
+                    {% endfor %}
+                </div>
         </div>
     </div>
+    {% endif %}
 
+    <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
+        {% for img in challenges_img %}
+        <div class="lg:mb-0 mb-3">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <p class="text-sm mt-1">{{img.alt}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if results.0 != '-' %}
     <div class="lg:px-44 px-5 lg:mt-0 mt-12">
         <div class="border-t relative lg:mx-20">
             <h2 class="font-bold font-[Oswald] lg:text-[2.6rem] text-2xl absolute lg:-top-5 -top-4 bg-[#1C1C1E] pr-4 lg:pr-0 lg:pl-4 tracking-widest lg:right-0">
                 RESULTS & ACCOMPLISHMENTS</h2>
-            <p class="lg:py-10 py-6 text-justify text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur rem illum vero quod quibusdam
-                consequuntur
-                id. Odit consequuntur quo optio voluptatum sequi saepe commodi eaque nemo aperiam necessitatibus ad a
-                quasi
-                ut explicabo unde quis vero, sed incidunt et. Consequuntur expedita, fugit voluptate enim dolores
-                minima,
-                iste ipsum reprehenderit deleniti placeat eos recusandae id alias laudantium itaque? Asperiores velit
-                dignissimos ratione, qui, nam eius, illum tempora suscipit perferendis aspernatur quaerat nostrum
-                reiciendis
-                voluptate? Optio enim reiciendis nihil deserunt assumenda quisquam laboriosam molestias doloribus
-                provident,
-                fugiat sequi earum excepturi, distinctio debitis accusantium voluptatem temporibus voluptatum alias
-                adipisci. Voluptatum nihil doloribus sed quaerat, eligendi perferendis laborum corporis, quasi fuga,
-                excepturi nulla porro sequi dicta reprehenderit quis est similique amet veniam totam quidem soluta
-                mollitia
-                dolores. Illo, tenetur? Animi ipsa eligendi nesciunt dolorem quidem assumenda iusto iste totam voluptas
-                officiis vel expedita voluptatibus temporibus delectus, ea rem incidunt recusandae similique vero
-                suscipit.
-                Distinctio soluta sit numquam error? Inventore aspernatur aliquam laboriosam quia, atque doloribus quae
-                ab a
-                libero officiis perspiciatis nesciunt sunt tempora facilis, esse dicta exercitationem explicabo
-                accusamus
-                deserunt voluptates id hic voluptate ipsum! Quibusdam rem non adipisci, deleniti quae voluptas nobis,
-                placeat aperiam est beatae modi soluta accusamus nostrum aspernatur natus.
-            </p>
+                <div class="lg:py-10 py-6 text-justify text-lg">
+                    {% for para in results %}
+                    <p class="mb-3">
+                        {{para}}
+                    </p>
+                    {% endfor %}
+                </div>
         </div>
+    </div>
+    {% endif %}
+
+    <div class="lg:flex lg:justify-around lg:mt-6 lg:mb-16 lg:px-44 px-5">
+        {% for img in results_img %}
+        <div class="lg:mb-0 mb-3">
+            <img src="{% static img.url %}" alt="" class="lg:max-h-[20rem]">
+            <p class="text-sm mt-1">{{img.alt}}</p>
+        </div>
+        {% endfor %}
     </div>
     
 </div>

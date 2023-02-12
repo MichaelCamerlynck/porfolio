@@ -34,7 +34,17 @@ class ProjectDetailView(DetailView):
        context = super().get_context_data(**kwargs)
        project = self.get_object()
        context["title"] = project.name
-       context["altered_title"] = project.name
+       context["summary"] = project.summary.split("||||")
+       context["techical"] = project.techical_detail.split("||||")
+       context["roles"] = project.roles.split("||||")
+       context["roles_list"] = project.roles_list.split("||||")
+       context["challenges"] = project.challenges.split("||||")
+       context["results"] = project.results.split("||||")
+       context["main_img"] = project.img_set.filter(position='main').first()
+       context["techical_img"] = project.img_set.filter(position='techical').all()
+       context["roles_img"] = project.img_set.filter(position='roles').all()
+       context["challenges_img"] = project.img_set.filter(position='challenges').all()
+       context["results_img"] = project.img_set.filter(position='results').all()
        return context
    
 
