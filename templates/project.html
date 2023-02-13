@@ -33,7 +33,7 @@
 
             <div>
                 {% for para in summary %}
-                <p class="lg:text-lg mb-3">{{para}}</p>
+                <p class="lg:text-lg mb-3">{{para|safe}}</p>
                 {% endfor %}
             </div>
 

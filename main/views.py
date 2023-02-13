@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.http import JsonResponse
 import requests
 from . import models
+from .models import Project
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -16,10 +17,13 @@ class IndexView(TemplateView):
    
 
 class ProjectListView(ListView):
-   context_object_name = "projects"
    model = models.Project
    template_name = "projects_overview.html"
    ordering = ['order']
+   context_object_name = 'projects'
+
+   def get_queryset(self):
+        return Project.objects.filter(show=True).order_by("order")
 
    def get_context_data(self, **kwargs):
        context = super().get_context_data(**kwargs)

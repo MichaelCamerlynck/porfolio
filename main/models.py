@@ -13,6 +13,7 @@ class Project(models.Model):
     roles_list = models.TextField(null=True)
     challenges = models.TextField(null=True)
     results = models.TextField(null=True)
+    show = models.BooleanField()
 
     def __str__(self):
         return self.name
