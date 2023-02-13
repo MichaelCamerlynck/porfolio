@@ -78,6 +78,41 @@
             -webkit-box-shadow: 0 0 0 30px #1C1C1E inset !important;
             -webkit-text-fill-color: white !important;
         }
+
+        .my-button {
+            font-family: "Inconsolata", monospace;
+            color: white;
+            height: 1em;
+            padding: 1.5em 2em;
+            background-color: salmon;
+            cursor: pointer;
+            position: relative;
+            bottom: 0px;
+            right: 0px;
+            box-shadow: 8px 8px 0px red;
+            text-align: center;
+            transition: all .25s;
+            line-height: 40%;
+        }
+
+        .my-button:hover {
+            text-decoration: none;
+            bottom: -4px;
+            right: -4px;
+            box-shadow: 4px 4px 0px red;
+        }
+
+        .my-button:active {
+            bottom: -7px;
+            right: -7px;
+            box-shadow: 1px 1px 0px red;
+        }
+
+        .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 

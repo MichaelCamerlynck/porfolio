@@ -14,6 +14,8 @@ class Project(models.Model):
     challenges = models.TextField(null=True)
     results = models.TextField(null=True)
     show = models.BooleanField()
+    link_text = models.CharField(max_length=200, null=True, blank=True)
+    link = models.CharField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.name

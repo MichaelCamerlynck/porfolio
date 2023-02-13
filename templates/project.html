@@ -79,9 +79,11 @@
                     </p>
 
                     <ul class="mb-3 list-disc list-inside">
+                        {% if roles_list.0 != '-' %}
                         {% for list in roles_list %}
                             <li>{{list}}</li>
                         {% endfor %}
+                        {% endif %}
                     </ul>
 
                     {% for para in roles %}
@@ -154,7 +156,16 @@
         </div>
         {% endfor %}
     </div>
-    
+</div>
+
+<div class="parent my-5 pb-5">
+    <a>
+        <a target="_blank" href="{{project.link}}">
+            <div class="my-button">
+                {{project.link_text}}
+            </div>
+        </a>
+    </a>
 </div>
 
 {% endblock %}
